@@ -23,9 +23,11 @@
     </div>
     <ul class="linklist__list">
       <li v-for="obj in linklist" :key="obj.name" class="linklist__list--item">
-        <v-card>
-          {{ obj.name }}
-        </v-card>
+        <v-hover v-slot="{ hover }">
+          <v-card class="linklist__list--vcard" :elevation="hover ? 10 : 2">
+            {{ obj.name }}
+          </v-card>
+        </v-hover>
       </li>
     </ul>
     <div class="linklist__pagination">
@@ -125,6 +127,11 @@ export default Vue.extend({
   }
   &__list {
     list-style: none;
+    &--vcard {
+      font-size: 30px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
   }
 }
 </style>
