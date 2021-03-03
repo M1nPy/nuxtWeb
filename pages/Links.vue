@@ -1,6 +1,6 @@
 <template>
   <div class="wrap__links">
-    <v-app><LinkList /></v-app>
+    <LinkList />
   </div>
 </template>
 <script lang="ts">
