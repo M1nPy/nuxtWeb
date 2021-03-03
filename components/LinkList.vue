@@ -22,26 +22,48 @@
       </v-container>
     </div>
     <ul class="linklist__list">
-      <li v-for="obj in linklist" :key="obj.name" class="linklist__list--item">
+      <li
+        v-for="obj in SlicedLinks"
+        :key="obj.name"
+        class="linklist__list--item"
+      >
         <v-hover v-slot="{ hover }">
           <v-card class="linklist__list--vcard" :elevation="hover ? 10 : 2">
-            {{ obj.name }}
+            <a
+              class="linklist__list--vcard--link"
+              :href="obj.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ obj.name }}</a
+            >
           </v-card>
         </v-hover>
       </li>
     </ul>
     <div class="linklist__pagination">
-      <v-pagination circle></v-pagination>
+      <v-pagination
+        v-model="CurrentPage"
+        circle
+        :length="PageLength > 0 ? PageLength : 1"
+        :total-visible="5"
+      ></v-pagination>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
+
+interface linkslistObject {
+  name: string
+  link: string
+  text: string
+  category: string[]
+}
 export default Vue.extend({
   name: 'LinkList',
   data() {
     return {
-      linklist: [
+      linkslist: [
         {
           name: 'いきいき音楽科',
           link: 'https://www.iki2music.work/',
@@ -111,7 +133,37 @@ export default Vue.extend({
         { state: 'Audio', abbr: 'audio' },
       ],
       CategoryValue: [],
+      CurrentPage: 1,
     }
+  },
+  computed: {
+    //     selected_linkslist(): linkslistObject[] {
+    //       const CategoryValue = this.CategoryValue
+    //       return this.selected_linkslist.filter(function (
+    //         linklist: linkslistObject
+    //       ) {
+    //         return (
+    //           CategoryValue.map((item) => linklist.category.includes(item)).filter(
+    //             (x) => x === true
+    //           ).length >= CategoryValue.length
+    //         )
+    //       })
+    //     },
+    PageLength(): number {
+      this.updateCurrentPage(1)
+      return Math.ceil(this.linkslist.length / 5)
+    },
+    SlicedLinks(): linkslistObject[] {
+      return this.linkslist.slice(
+        (this.CurrentPage - 1) * 5,
+        (this.CurrentPage - 1) * 5 + 5
+      )
+    },
+  },
+  methods: {
+    updateCurrentPage(CurrentPage: number) {
+      this.CurrentPage = CurrentPage
+    },
   },
 })
 </script>
@@ -134,6 +186,12 @@ export default Vue.extend({
       height: 100px;
       margin: 0 auto;
       margin-bottom: 20px;
+      &--link {
+        text-decoration: none;
+        display: block;
+        height: 100%;
+        color: black;
+      }
     }
   }
 }

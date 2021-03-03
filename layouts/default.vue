@@ -3,17 +3,8 @@
     <v-app-bar color="primary" dark app clipped-right>
       <v-toolbar-title>M1nPy</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn class="hidden-sm-and-down" text to="/">Home</v-btn>
-      </v-toolbar-items>
-      <v-toolbar-items>
-        <v-btn class="hidden-sm-and-down" text to="/About">About</v-btn>
-      </v-toolbar-items>
-      <v-toolbar-items>
-        <v-btn class="hidden-sm-and-down" text to="/Graphic">Graphic</v-btn>
-      </v-toolbar-items>
-      <v-toolbar-items>
-        <v-btn class="hidden-sm-and-down" text to="/Links">Links</v-btn>
+      <v-toolbar-items v-for="n in nav_lists" :key="n.name">
+        <v-btn class="hidden-sm-and-down" text :to="n.link">{{ n.name }}</v-btn>
       </v-toolbar-items>
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
@@ -79,9 +70,24 @@ export default {
           link: '/About',
         },
         {
+          name: 'Character',
+          icon: 'mdi-account-multiple',
+          link: '/Character',
+        },
+        {
           name: 'Graphic',
           icon: 'mdi-palette',
           link: '/Graphic',
+        },
+        {
+          name: 'Download',
+          icon: 'mdi-arrow-collapse-down',
+          link: '/Downdload',
+        },
+        {
+          name: 'Spec',
+          icon: 'mdi-package-variant-closed',
+          link: '/Spec',
         },
         {
           name: 'Links',
