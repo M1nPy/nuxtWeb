@@ -42,6 +42,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/sentry',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

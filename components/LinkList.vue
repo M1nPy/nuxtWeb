@@ -169,7 +169,6 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .linklist {
-  max-width: 800px;
   &__header {
     &--title {
       font-size: 27px;
@@ -181,9 +180,13 @@ export default Vue.extend({
   &__list {
     padding: 0 30px;
     list-style: none;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-around;
     &--vcard {
       font-size: 30px;
       height: 100px;
+      // width: 400px;
       margin: 0 auto;
       margin-bottom: 20px;
       &--link {

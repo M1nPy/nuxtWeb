@@ -60,14 +60,14 @@ export default {
       drawer: false,
       nav_lists: [
         {
-          name: 'Home',
+          name: 'Top',
           icon: 'mdi-vuetify',
           link: '/',
         },
         {
-          name: 'About',
+          name: 'Story',
           icon: 'mdi-cogs',
-          link: '/About',
+          link: '/Story',
         },
         {
           name: 'Character',
