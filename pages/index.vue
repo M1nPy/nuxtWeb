@@ -1,6 +1,15 @@
-<template><div class="index">a</div></template>
+<template>
+  <div class="index">
+    <HelloWorld />
+  </div>
+</template>
 <script lang="ts">
 import Vue from 'vue'
-export default Vue.extend({})
+import HelloWorld from '@/components/HelloWorld.vue'
+export default Vue.extend({
+  components: {
+    HelloWorld,
+  },
+})
 </script>
 <style lang="scss" scoped></style>
