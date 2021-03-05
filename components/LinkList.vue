@@ -52,18 +52,19 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
+import axios from 'axios'
 
-interface linkslistObject {
-  name: string
-  link: string
-  text: string
-  category: string[]
-}
+// interface linkslistObject {
+//   name: string
+//   link: string
+//   text: string
+//   category: string[]
+// }
 export default Vue.extend({
   name: 'LinkList',
   data() {
     return {
-      linkslist: [
+      linkslists: [
         {
           name: 'いきいき音楽科',
           link: 'https://www.iki2music.work/',
@@ -134,31 +135,39 @@ export default Vue.extend({
       ],
       CategoryValue: [],
       CurrentPage: 1,
+      linkslist: {},
+      SlicedLinks: {},
+      PageLength: 1,
     }
   },
-  computed: {
-    //     selected_linkslist(): linkslistObject[] {
-    //       const CategoryValue = this.CategoryValue
-    //       return this.selected_linkslist.filter(function (
-    //         linklist: linkslistObject
-    //       ) {
-    //         return (
-    //           CategoryValue.map((item) => linklist.category.includes(item)).filter(
-    //             (x) => x === true
-    //           ).length >= CategoryValue.length
-    //         )
-    //       })
-    //     },
-    PageLength(): number {
-      this.updateCurrentPage(1)
-      return Math.ceil(this.linkslist.length / 5)
-    },
-    SlicedLinks(): linkslistObject[] {
-      return this.linkslist.slice(
-        (this.CurrentPage - 1) * 5,
-        (this.CurrentPage - 1) * 5 + 5
-      )
-    },
+  // computed: {
+  //   //     selected_linkslist(): linkslistObject[] {
+  //   //       const CategoryValue = this.CategoryValue
+  //   //       return this.selected_linkslist.filter(function (
+  //   //         linklist: linkslistObject
+  //   //       ) {
+  //   //         return (
+  //   //           CategoryValue.map((item) => linklist.category.includes(item)).filter(
+  //   //             (x) => x === true
+  //   //           ).length >= CategoryValue.length
+  //   //         )
+  //   //       })
+  //   //     },
+  //   // PageLength(): number {
+  //   //   this.updateCurrentPage(1)
+  //   //   return Math.ceil(this.linkslist.length / 5)
+  //   // },
+  //   // SlicedLinks(): linkslistObject[] {
+  //   //   return this.linkslist.slice(
+  //   //     (this.CurrentPage - 1) * 5,
+  //   //     (this.CurrentPage - 1) * 5 + 5
+  //   //   )
+  //   // },
+  // },
+  mounted() {
+    axios
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .then((response) => (this.linkslist = response))
   },
   methods: {
     updateCurrentPage(CurrentPage: number) {
