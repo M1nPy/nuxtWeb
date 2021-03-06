@@ -14,9 +14,18 @@
 <script lang="ts">
 import LinkList from '@/components/LinkList.vue'
 import Vue from 'vue'
+import { createClient } from '~/plugins/contentful.js'
+
+const client = createClient()
+
 export default Vue.extend({
   components: {
     LinkList,
+  },
+  asyncData() {
+    return client.getEntries().then((entries) => {
+      return { post: entries.items }
+    })
   },
 })
 </script>
