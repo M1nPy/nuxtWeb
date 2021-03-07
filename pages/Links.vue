@@ -10,6 +10,11 @@
                 return x.fields
               })
             "
+            :items="
+              Spost.items.map(function (x) {
+                return x.fields
+              })
+            "
             :total-length="post.total"
           />
         </v-col>
@@ -33,12 +38,18 @@ export default Vue.extend({
     const entries = await client.getEntries({
       content_type: 'linksLists',
       limit: 3,
-      order: '-sys.createdAt',
+      // order: '-sys.createdAt',
       skip: query.page ? (Number(query.page) - 1) * 3 : 0,
       'fields.category[all]': query.category ? query.category : 'music',
+      // 'fields.tags.sys.contentType.sys.id': 'tags',
+      // 'fields.tags.fields.tags': '',
+    })
+    const Sentries = await client.getEntries({
+      content_type: 'linksListsSelects',
     })
     return {
       post: entries,
+      Spost: Sentries,
     }
   },
   watchQuery: true,

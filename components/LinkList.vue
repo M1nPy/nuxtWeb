@@ -55,6 +55,10 @@ interface linkslistObject {
   text: string
   category: string[]
 }
+interface selectList {
+  state: string
+  abbr: string
+}
 export default Vue.extend({
   name: 'LinkList',
   props: {
@@ -70,16 +74,19 @@ export default Vue.extend({
       type: Number,
       default: 1,
     },
-  },
-  data() {
-    return {
-      items: [
+    items: {
+      type: Array as Vue.PropType<selectList[]>,
+      default: [
         { state: 'Music', abbr: 'music' },
         { state: 'MusicTheory', abbr: 'theory' },
         { state: 'IT', abbr: 'it' },
         { state: 'Math', abbr: 'math' },
         { state: 'Audio', abbr: 'audio' },
       ],
+    },
+  },
+  data() {
+    return {
       categoryValue: [''],
       currentPage: 1,
     }
