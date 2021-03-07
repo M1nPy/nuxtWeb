@@ -35,7 +35,7 @@ export default Vue.extend({
       limit: 3,
       order: '-sys.createdAt',
       skip: query.page ? (Number(query.page) - 1) * 3 : 0,
-      'fields.category[in]': query.category ? query.category : 'music',
+      'fields.category[all]': query.category ? query.category : 'music',
     })
     return {
       post: entries,

@@ -97,7 +97,9 @@ export default Vue.extend({
       })
     },
     categoryValue(newCategory) {
-      this.$router.push({ query: { category: newCategory.join(), page: '1' } })
+      this.$router.push({
+        query: { category: newCategory.filter(Boolean).join(), page: '1' },
+      })
       this.currentPage = 1
     },
   },
@@ -106,7 +108,7 @@ export default Vue.extend({
     this.currentPage = query != null ? Number(query) : 1
 
     const categoryq = this.$route.query.category
-    this.categoryValue = categoryq != null ? String(categoryq).split(',') : ['']
+    this.categoryValue = categoryq != null ? String(categoryq).split(',') : []
   },
 })
 </script>
