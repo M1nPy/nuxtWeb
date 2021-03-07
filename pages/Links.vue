@@ -53,7 +53,7 @@ export default Vue.extend({
       Spost: Sentries,
     }
   },
-  watchQuery: true,
+  watchQuery: ['page', 'category'],
   // mounted():{
 
   // }

@@ -107,7 +107,10 @@ export default Vue.extend({
     currentPage(newNumber: string) {
       this.$router.push({
         name: 'Links',
-        query: { category: this.categoryValue.join(), page: newNumber },
+        query: {
+          category: this.categoryValue.filter(Boolean).join(),
+          page: newNumber,
+        },
       })
     },
     categoryValue(newCategory) {
@@ -156,6 +159,7 @@ export default Vue.extend({
     &--transition {
       padding: 0 30px;
       list-style: none;
+      height: 500px; //button Fixed
     }
     &--vcard {
       font-size: 30px;
