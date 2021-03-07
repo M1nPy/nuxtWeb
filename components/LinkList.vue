@@ -78,10 +78,7 @@ export default Vue.extend({
       type: Array as Vue.PropType<selectList[]>,
       default: [
         { state: 'Music', abbr: 'music' },
-        { state: 'MusicTheory', abbr: 'theory' },
         { state: 'IT', abbr: 'it' },
-        { state: 'Math', abbr: 'math' },
-        { state: 'Audio', abbr: 'audio' },
       ],
     },
   },
