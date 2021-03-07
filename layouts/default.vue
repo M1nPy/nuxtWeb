@@ -75,14 +75,14 @@ export default {
           link: '/Character',
         },
         {
-          name: 'Graphic',
+          name: 'Gallery',
           icon: 'mdi-palette',
-          link: '/Graphic',
+          link: '/Gallery',
         },
         {
           name: 'Download',
           icon: 'mdi-arrow-collapse-down',
-          link: '/Downdload',
+          link: '/Download',
         },
         {
           name: 'Spec',
