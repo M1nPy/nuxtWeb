@@ -21,21 +21,31 @@
         </v-row>
       </v-container>
     </div>
-    <ul class="linklist__list">
-      <li v-for="obj in linklists" :key="obj.name" class="linklist__list--item">
-        <v-hover v-slot="{ hover }">
-          <v-card class="linklist__list--vcard" :elevation="hover ? 10 : 2">
-            <a
-              class="linklist__list--vcard--link"
-              :href="obj.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              >{{ obj.name }}</a
-            >
-          </v-card>
-        </v-hover>
-      </li>
-    </ul>
+    <div class="linklist__list">
+      <transition-group
+        tag="ul"
+        name="flip-list"
+        class="linklist__list--transition"
+      >
+        <li
+          v-for="obj in linklists"
+          :key="obj.name"
+          class="linklist__list--item"
+        >
+          <v-hover v-slot="{ hover }">
+            <v-card class="linklist__list--vcard" :elevation="hover ? 10 : 2">
+              <a
+                class="linklist__list--vcard--link"
+                :href="obj.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ obj.name }}</a
+              >
+            </v-card>
+          </v-hover>
+        </li>
+      </transition-group>
+    </div>
     <div class="linklist__pagination">
       <v-pagination
         v-model="currentPage"
@@ -117,6 +127,22 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
+.flip-list {
+  &-enter {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  &-leave-active {
+    position: absolute;
+  }
+  &-enter-active {
+    transition: all 0.5s ease;
+  }
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
 .linklist {
   &__header {
     &--title {
@@ -127,11 +153,10 @@ export default Vue.extend({
     }
   }
   &__list {
-    padding: 0 30px;
-    list-style: none;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
+    &--transition {
+      padding: 0 30px;
+      list-style: none;
+    }
     &--vcard {
       font-size: 30px;
       height: 100px;
