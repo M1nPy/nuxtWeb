@@ -33,7 +33,9 @@ export default Vue.extend({
     const entries = await client.getEntries({
       content_type: 'linksLists',
       limit: 3,
+      order: '-sys.createdAt',
       skip: query.page ? (Number(query.page) - 1) * 3 : 0,
+      'fields.category[in]': query.category ? query.category : 'music',
     })
     return {
       post: entries,

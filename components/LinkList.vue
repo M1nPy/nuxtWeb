@@ -9,7 +9,7 @@
           <v-spacer></v-spacer>
           <v-col cols="5" class="linklist__header--select"
             ><v-select
-              v-model="CategoryValue"
+              v-model="categoryValue"
               :items="items"
               item-text="state"
               item-value="abbr"
@@ -73,68 +73,6 @@ export default Vue.extend({
   },
   data() {
     return {
-      // linkslists: [
-      //   {
-      //     name: 'いきいき音楽科',
-      //     link: 'https://www.iki2music.work/',
-      //     text: 'https://www.iki2music.work/',
-      //     category: ['music', 'theory'],
-      //   },
-      //   {
-      //     name: 'DATT.MUSIC',
-      //     link: 'https://datt-music.com/',
-      //     text: 'https://datt-music.com/',
-      //     category: ['music'],
-      //   },
-      //   {
-      //     name: '音楽理論.com',
-      //     link: 'https://ongakuriron.com/',
-      //     text: 'https://ongakuriron.com/',
-      //     category: ['music', 'theory'],
-      //   },
-      //   {
-      //     name: 'Arch Wiki',
-      //     link: 'https://www.archlinux.jp/',
-      //     text: 'https://www.archlinux.jp/',
-      //     category: ['it'],
-      //   },
-      //   {
-      //     name: 'Zenn',
-      //     link: 'https://zenn.dev/',
-      //     text: 'https://zenn.dev/',
-      //     category: ['it'],
-      //   },
-      //   {
-      //     name: 'Qiita',
-      //     link: 'https://qiita.com/',
-      //     text: 'https://qiita.com/',
-      //     category: ['it'],
-      //   },
-      //   {
-      //     name: 'ITmedia',
-      //     link: 'http://www.itmedia.co.jp/',
-      //     text: 'http://www.itmedia.co.jp/',
-      //     category: ['it'],
-      //   },
-      //   {
-      //     name: 'さくらのナレッジ',
-      //     link: 'https://knowledge.sakura.ad.jp/',
-      //     text: 'https://knowledge.sakura.ad.jp/',
-      //     category: ['it'],
-      //   },
-      //   {
-      //     name: 'ICSMedia',
-      //     link: 'https://ics.media/',
-      //     text: 'https://ics.media/',
-      //     category: ['it'],
-      //   },
-      //   {
-      //     name: 'Wolframalpha',
-      //     link: 'https://www.wolframalpha.com/',
-      //     text: 'https://www.wolframalpha.com/',
-      //     category: ['math'],
-      //   },
-      // ],
       items: [
         { state: 'Music', abbr: 'music' },
         { state: 'MusicTheory', abbr: 'theory' },
@@ -142,23 +80,33 @@ export default Vue.extend({
         { state: 'Math', abbr: 'math' },
         { state: 'Audio', abbr: 'audio' },
       ],
-      CategoryValue: [],
+      categoryValue: [''],
       currentPage: 1,
     }
   },
   computed: {
     pageLength() {
-      return Math.ceil(this.totalLength / 5)
+      return Math.ceil(this.totalLength / 3)
     },
   },
   watch: {
     currentPage(newNumber: string) {
-      this.$router.push({ name: 'Links', query: { page: newNumber } })
+      this.$router.push({
+        name: 'Links',
+        query: { category: this.categoryValue.join(), page: newNumber },
+      })
+    },
+    categoryValue(newCategory) {
+      this.$router.push({ query: { category: newCategory.join(), page: '1' } })
+      this.currentPage = 1
     },
   },
   mounted() {
     const query = this.$route.query.page
     this.currentPage = query != null ? Number(query) : 1
+
+    const categoryq = this.$route.query.category
+    this.categoryValue = categoryq != null ? String(categoryq).split(',') : ['']
   },
 })
 </script>
