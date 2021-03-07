@@ -39,11 +39,6 @@ export default Vue.extend({
       post: entries,
     }
   },
-  data() {
-    return {
-      current: 0,
-    }
-  },
   watchQuery: true,
   // mounted():{
 

@@ -152,7 +152,7 @@ export default Vue.extend({
     },
   },
   watch: {
-    currentPage(newNumber) {
+    currentPage(newNumber: string) {
       this.$router.push({ name: 'Links', query: { page: newNumber } })
     },
   },
