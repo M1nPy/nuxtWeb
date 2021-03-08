@@ -1,5 +1,5 @@
 <template>
-  <div class="story-wrap"><BtcGraph /></div>
+  <div class="spec-wrap"><BtcGraph /></div>
 </template>
 <script lang="ts">
 import Vue from 'vue'

@@ -83,7 +83,7 @@ export default Vue.extend({
             transform: 'translate3d(0, 0, 0)',
           },
         })
-        .addIndicators({ name: 'OK' })
+      // .addIndicators({ name: 'OK' })
     },
   },
 })

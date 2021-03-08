@@ -50,6 +50,16 @@
     <v-main class="px-0">
       <nuxt />
     </v-main>
+    <v-footer dark padless>
+      <v-card class="flex">
+        <v-card-title class="py-2">
+          <strong>© M1nPy</strong>
+          <v-spacer></v-spacer>
+          2021-{{ new Date().getFullYear() }}
+        </v-card-title>
+        <v-spacer></v-spacer>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
