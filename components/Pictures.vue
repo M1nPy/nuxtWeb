@@ -14,31 +14,38 @@
         <v-col v-for="n in 9" :key="n" class="d-flex child-flex" cols="4">
           <v-dialog v-model="dialog" max-height="500px" max-width="800px">
             <template #activator="{ on, attrs }">
-              <v-responsive :aspect-ratio="16 / 9">
-                <v-img
-                  :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-                  class="grey lighten-2"
-                  v-bind="attrs"
-                  @click="
-                    imgUrl = `https://picsum.photos/500/300?image=${n * 5 + 10}`
-                  "
-                  v-on="on"
+              <v-hover v-slot="{ hover }">
+                <v-responsive
+                  :class="{ 'on-hover': hover }"
+                  :aspect-ratio="16 / 9"
                 >
-                  <template #placeholder>
-                    <v-row
-                      class="fill-height ma-0"
-                      align="center"
-                      justify="center"
-                    >
-                      <v-progress-circular
-                        indeterminate
-                        color="grey lighten-5"
-                      ></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
-              </v-responsive>
+                  <v-img
+                    :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
+                    :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                    class="grey lighten-2"
+                    v-bind="attrs"
+                    @click="
+                      imgUrl = `https://picsum.photos/500/300?image=${
+                        n * 5 + 10
+                      }`
+                    "
+                    v-on="on"
+                  >
+                    <template #placeholder>
+                      <v-row
+                        class="fill-height ma-0"
+                        align="center"
+                        justify="center"
+                      >
+                        <v-progress-circular
+                          indeterminate
+                          color="grey lighten-5"
+                        ></v-progress-circular>
+                      </v-row>
+                    </template>
+                  </v-img>
+                </v-responsive>
+              </v-hover>
             </template>
             <v-card>
               <v-img :src="imgUrl"></v-img>
@@ -61,3 +68,12 @@ export default Vue.extend({
   },
 })
 </script>
+<style lang="scss" scoped>
+.v-responsive:not(.on-hover) {
+  opacity: 1;
+}
+.v-responsive {
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+}
+</style>
