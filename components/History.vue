@@ -2,6 +2,15 @@
   <div class="history-wrap">
     <v-container>
       <v-row>
+        <v-col cols="5"
+          ><h3 class="history-wrap__header--title">History</h3></v-col
+        >
+        <v-col cols="2" align-self="center" history-wrap__header--ctext
+          ><span>スクロールで変化</span></v-col
+        >
+        <v-col cols="5"></v-col>
+      </v-row>
+      <v-row>
         <v-col cols="5">
           <transition-group
             class="history-wrap__list--left d-flex flex-column"
@@ -63,7 +72,7 @@ export default Vue.extend({
       return this.$scrollmagic
         .scene({
           triggerElement: '#itemanime' + String(index < 0 ? 0 : index),
-          triggerHook: 0.3,
+          triggerHook: 0.35,
           offset: 220 - 130 * (index < 0 ? 0.05 : index),
           duration: 0,
           reverse: false,
@@ -81,6 +90,14 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .history-wrap {
+  &__header {
+    &--title {
+      text-align: center;
+    }
+    &--ctext {
+      text-align: center;
+    }
+  }
   &__list--right {
     list-style: none;
     padding: 0;
@@ -88,7 +105,7 @@ export default Vue.extend({
       margin-top: 200px;
       transform: translate3d(500px, 0, 0);
       opacity: 0;
-      transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1);
+      transition: 0.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
     }
   }
   &__list--left {
