@@ -7,7 +7,9 @@
             ><h3 class="history-wrap__header--title">History</h3>
             <v-spacer></v-spacer>
             <v-snackbar v-model="expand">
-              <div style="text-align: center">スクロールすると表示されます</div>
+              <div style="text-align: center">
+                スクロールして表示してみましょう
+              </div>
             </v-snackbar>
             <v-spacer></v-spacer>
             <v-btn @click="expand = !expand">
@@ -106,7 +108,7 @@ export default Vue.extend({
             transform: 'translate3d(0, 0, 0)',
           },
         })
-        .addIndicators({ name: 'OK' })
+      // .addIndicators({ name: 'OK' })
     },
   },
 })
