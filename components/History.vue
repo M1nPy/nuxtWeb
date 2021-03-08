@@ -9,7 +9,7 @@
           >
             <li v-for="i in history" :key="i.text">
               <v-card
-                class="history-wrap__list--left-items"
+                class="history-wrap__list--left-items mx-auto"
                 height="200"
                 width="500"
                 >{{ i.text }}</v-card
@@ -25,7 +25,7 @@
           >
             <li v-for="i in history" :key="i.text">
               <v-card
-                class="history-wrap__list--right-items"
+                class="history-wrap__list--right-items mx-auto"
                 height="200"
                 width="500"
                 >{{ i.text }}</v-card

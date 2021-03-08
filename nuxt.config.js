@@ -75,7 +75,7 @@ export default {
   build: {},
   loading: {
     continuous: true,
-    color: 'blue',
+    color: 'green',
     height: '5px',
   },
 }
