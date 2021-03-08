@@ -22,7 +22,7 @@
           ></v-img>
         </v-card>
       </v-row>
-      <v-row class="pt-10">
+      <v-row class="py-10">
         <v-col cols="5">
           <transition-group
             class="history-wrap__list--left d-flex flex-column"
