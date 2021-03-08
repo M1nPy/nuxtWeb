@@ -6,15 +6,14 @@
           <v-card-title
             ><h3 class="history-wrap__header--title">History</h3>
             <v-spacer></v-spacer>
-            <v-expand-transition>
-              <v-card v-show="expand" class="mx-auto">
-                <v-card-text class="py-1"
-                  >スクロールすると表示されます</v-card-text
-                >
-              </v-card>
-            </v-expand-transition>
+            <v-snackbar v-model="expand">
+              <div style="text-align: center">スクロールすると表示されます</div>
+            </v-snackbar>
             <v-spacer></v-spacer>
-            <v-btn @click="expand = !expand">ここをクリック</v-btn>
+            <v-btn @click="expand = !expand">
+              <span v-show="!expand">ここをクリック</span>
+              <span v-show="expand">もう一度クリック</span>
+            </v-btn>
           </v-card-title>
           <v-img
             height="300"
@@ -28,7 +27,7 @@
             class="history-wrap__list--left d-flex flex-column"
             tag="ul"
           >
-            <li v-for="(i, index) in history1" :key="i.text">
+            <li v-for="(i, index) in history1" :key="i.title">
               <v-card
                 :id="'itemanime' + 2 * index"
                 class="history-wrap__list--left-items mx-auto"
@@ -47,7 +46,7 @@
             class="history-wrap__list--right d-flex flex-column"
             tag="ul"
           >
-            <li v-for="(i, index) in history2" :key="i.text">
+            <li v-for="(i, index) in history2" :key="i.title">
               <v-card
                 :id="'itemanime' + (2 * index + 1)"
                 class="history-wrap__list--right-items mx-auto"
@@ -97,7 +96,7 @@ export default Vue.extend({
         .scene({
           triggerElement: '#itemanime' + String(index < 0 ? 0 : index),
           triggerHook: 0.3,
-          offset: -200 - 150 * (index < 0 ? 0.05 : index),
+          offset: -200 - 130 * (index < 0 ? 0.05 : index),
           duration: 0,
           reverse: false,
         })
