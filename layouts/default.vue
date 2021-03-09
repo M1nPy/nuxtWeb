@@ -72,7 +72,7 @@ export default {
       nav_lists: [
         {
           name: 'Top',
-          icon: 'mdi-vuetify',
+          icon: 'mdi-beach',
           link: '/',
         },
         {

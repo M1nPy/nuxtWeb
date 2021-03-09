@@ -81,4 +81,7 @@ export default {
     color: 'green',
     height: '5px',
   },
+  sentry: {
+    dsn: process.env.SENTRY_DSN, // DSNを設定
+  },
 }
