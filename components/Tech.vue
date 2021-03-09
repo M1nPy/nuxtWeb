@@ -5,7 +5,7 @@
         <v-card class="flex">
           <v-card-title
             ><h3 class="history-wrap__header--title">
-              Such as the framework used on this site
+              Such as frameworks used on this site
             </h3>
             <v-spacer></v-spacer>
           </v-card-title>
@@ -181,6 +181,13 @@ export default Vue.extend({
             'An intuitive Git-based workflow and powerful serverless platform to build, deploy, and collaborate on web apps',
           homepage: 'https://www.netlify.com/',
         },
+        Jamstack: {
+          name: 'Jamstack',
+          src: require('@/assets/techicons/jamstack-icon.svg'),
+          text:
+            'The modern way to build Websites and Apps that delivers better performance',
+          homepage: 'https://jamstack.org/',
+        },
       },
       selectItem: 'Nuxt',
     }
@@ -195,7 +202,7 @@ export default Vue.extend({
         case 'md':
           return 50
         case 'lg':
-          return 30
+          return 80
         case 'xl':
           return 50
         default:

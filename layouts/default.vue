@@ -24,9 +24,7 @@
       <v-container>
         <v-list-item>
           <v-list-item-content>
-            <v-list-item-title class="title">
-              Navigation lists
-            </v-list-item-title>
+            <v-list-item-title class="title"> M1nPy's Site </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 

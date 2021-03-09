@@ -5,9 +5,17 @@
         <v-col
           ><v-card
             ><v-card-title><strong>あいうえお</strong></v-card-title>
-            <v-card-text class="text-center">あいえお</v-card-text>
+            <v-card-text class="text-center"
+              >とりあえずなんか書いとけ</v-card-text
+            >
             <v-card-actions
-              ><v-spacer></v-spacer><v-btn elevation="3">Download</v-btn>
+              ><v-spacer></v-spacer
+              ><v-btn
+                elevation="3"
+                :href="require('@/assets/downloads/text.png')"
+                download
+                >Download</v-btn
+              >
               <v-spacer></v-spacer
             ></v-card-actions> </v-card
         ></v-col>
@@ -55,3 +63,15 @@ export default Vue.extend({
   },
 })
 </script>
+<style lang="scss" scoped>
+.dlc-wrap {
+  &__list {
+    &--dlink {
+      text-decoration: none;
+      display: block;
+      height: 100%;
+      color: black;
+    }
+  }
+}
+</style>
