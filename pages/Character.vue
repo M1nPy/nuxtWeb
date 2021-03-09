@@ -1,12 +1,12 @@
 <template>
-  <div class="character-wrap"><BtcGraph /></div>
+  <div class="character-wrap"><Tech /></div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import BtcGraph from '@/components/BtcGraph.vue'
+import Tech from '@/components/Tech.vue'
 export default Vue.extend({
   components: {
-    BtcGraph,
+    Tech,
   },
 })
 </script>

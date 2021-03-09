@@ -24,6 +24,7 @@
         </v-card>
       </v-row>
       <v-row class="py-10">
+        <v-spacer></v-spacer>
         <v-col cols="5">
           <transition-group
             class="history-wrap__list--left d-flex flex-column"
@@ -60,6 +61,7 @@
             </li>
           </transition-group>
         </v-col>
+        <v-spacer></v-spacer>
       </v-row>
     </v-container>
   </div>

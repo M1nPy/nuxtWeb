@@ -1,12 +1,12 @@
 <template>
-  <div class="download-wrap"><BtcGraph /></div>
+  <div class="download-wrap"><Dlc /></div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import BtcGraph from '@/components/BtcGraph.vue'
+import Dlc from '@/components/Dlc.vue'
 export default Vue.extend({
   components: {
-    BtcGraph,
+    Dlc,
   },
 })
 </script>

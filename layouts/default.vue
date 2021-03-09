@@ -4,7 +4,9 @@
       <v-toolbar-title>M1nPy</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items v-for="n in nav_lists" :key="n.name">
-        <v-btn class="hidden-sm-and-down" text :to="n.link">{{ n.name }}</v-btn>
+        <v-btn class="hidden-sm-and-down" text :to="n.link" :nuxt="true">{{
+          n.name
+        }}</v-btn>
       </v-toolbar-items>
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
@@ -35,6 +37,7 @@
             v-for="nav_list in nav_lists"
             :key="nav_list.name"
             :to="nav_list.link"
+            :nuxt="true"
           >
             <v-list-item-icon>
               <v-icon>{{ nav_list.icon }}</v-icon>

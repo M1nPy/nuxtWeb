@@ -10,12 +10,13 @@
           </v-card-title>
         </v-card>
       </v-row>
-      <v-row>
+      <v-row align-content="space-around" justify="center">
         <v-col v-for="n in 9" :key="n" class="d-flex child-flex" cols="4">
           <v-dialog v-model="dialog" max-height="500px" max-width="800px">
             <template #activator="{ on, attrs }">
               <v-hover v-slot="{ hover }">
                 <v-responsive
+                  class="elevation-10"
                   :class="{ 'on-hover': hover }"
                   :aspect-ratio="16 / 9"
                 >
@@ -31,18 +32,6 @@
                     "
                     v-on="on"
                   >
-                    <template #placeholder>
-                      <v-row
-                        class="fill-height ma-0"
-                        align="center"
-                        justify="center"
-                      >
-                        <v-progress-circular
-                          indeterminate
-                          color="grey lighten-5"
-                        ></v-progress-circular>
-                      </v-row>
-                    </template>
                   </v-img>
                 </v-responsive>
               </v-hover>
