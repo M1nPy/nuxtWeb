@@ -97,12 +97,12 @@ export default Vue.extend({
 
   computed: {
     selected_linkslist() {
-      const CategoryValue = this.categoryValue
+      const CategoryValue = (this as any).categoryValue
       return this.linklists.filter(function (linklist) {
         return (
-          CategoryValue.map((item) => linklist.category.includes(item)).filter(
-            (x) => x === true
-          ).length >= CategoryValue.length
+          CategoryValue.map((item: string) =>
+            linklist.category.includes(item)
+          ).filter((x: Boolean) => x === true).length >= CategoryValue.length
         )
       })
     },
