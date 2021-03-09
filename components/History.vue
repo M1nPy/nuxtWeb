@@ -73,18 +73,18 @@ export default Vue.extend({
   data() {
     return {
       history2: [
-        { title: '5年前期', text: 'なんもしてない。' },
-        { title: '4年前期', text: 'なんもしてない。' },
-        { title: '3年前期', text: 'なんもしてない。' },
-        { title: '2年前期', text: 'なんもしてない。' },
-        { title: '1年前期', text: 'なんもしてない。' },
+        { title: '5年前期', text: 'なんかやった。' },
+        { title: '4年前期', text: 'なんかやった。' },
+        { title: '3年前期', text: 'なんかやった。' },
+        { title: '2年前期', text: 'なんかやった。' },
+        { title: '1年前期', text: 'なんかやった。' },
       ],
       history1: [
-        { title: '5年後期', text: 'なんもしてない。' },
-        { title: '4年後期', text: 'なんもしてない。' },
-        { title: '3年後期', text: 'なんもしてない。' },
-        { title: '2年後期', text: 'なんもしてない。' },
-        { title: '1年後期', text: 'なんもしてない。' },
+        { title: '5年後期', text: 'なんかやった。' },
+        { title: '4年後期', text: 'なんかやった。' },
+        { title: '3年後期', text: 'なんかやった。' },
+        { title: '2年後期', text: 'なんかやった。' },
+        { title: '1年後期', text: 'なんかやった。' },
       ],
       expand: false,
     }
