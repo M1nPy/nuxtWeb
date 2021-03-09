@@ -191,8 +191,8 @@ export default Vue.extend({
     }
   },
   computed: {
-    iconheight() {
-      switch (this.$vuetify.breakpoint.name) {
+    iconheight(): number {
+      switch ((this as any).$vuetify.breakpoint.name) {
         case 'xs':
           return 30
         case 'sm':
@@ -204,7 +204,7 @@ export default Vue.extend({
         case 'xl':
           return 50
         default:
-          return 0
+          return 10
       }
     },
   },
