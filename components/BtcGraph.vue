@@ -9,8 +9,7 @@ export default Vue.extend({
   name: 'BtcGraph',
   mounted() {
     const chart = new CryptowatchEmbed('bitfinex', 'btcusd', {
-      width: 800,
-      height: 500,
+      width: 300,
     })
     chart.mount('#chart-container')
   },

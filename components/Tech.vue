@@ -4,9 +4,7 @@
       <v-row>
         <v-card class="flex">
           <v-card-title
-            ><h3 class="history-wrap__header--title">
-              Such as frameworks used on this site
-            </h3>
+            ><strong>Such as frameworks used on this site</strong>
             <v-spacer></v-spacer>
           </v-card-title>
         </v-card>
@@ -212,7 +210,7 @@ export default Vue.extend({
   },
 })
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .tech-wrap {
   &__view {
     &--img-a {
