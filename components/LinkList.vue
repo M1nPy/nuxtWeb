@@ -118,8 +118,8 @@ export default Vue.extend({
     },
   },
   methods: {
-    updateCurrentPage(CurrentPage: number) {
-      this.CurrentPage = CurrentPage
+    updateCurrentPage(nextPage: number) {
+      this.currentPage = nextPage
     },
   },
 })
