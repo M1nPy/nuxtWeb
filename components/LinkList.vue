@@ -90,14 +90,21 @@ export default Vue.extend({
   },
   data() {
     return {
-      categoryValue: [''],
+      categoryValue: [],
       currentPage: 1,
     }
   },
 
   computed: {
-    selected_linkslist(): linkslistObject[] {
-      return this.linklists
+    selected_linkslist() {
+      const CategoryValue = this.categoryValue
+      return this.linklists.filter(function (linklist) {
+        return (
+          CategoryValue.map((item) => linklist.category.includes(item)).filter(
+            (x) => x === true
+          ).length >= CategoryValue.length
+        )
+      })
     },
     pageLength(): number {
       this.updateCurrentPage(1)
