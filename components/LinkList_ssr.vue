@@ -28,7 +28,7 @@
         class="linklist__list--transition"
       >
         <li
-          v-for="obj in SlicedLinks"
+          v-for="obj in linklists"
           :key="obj.name"
           class="linklist__list--item"
         >
@@ -80,6 +80,10 @@ export default Vue.extend({
         ]
       },
     },
+    totalLength: {
+      type: Number,
+      default: 1,
+    },
     items: {
       type: Array as Vue.PropType<selectList[]>,
       default: [
@@ -94,26 +98,34 @@ export default Vue.extend({
       currentPage: 1,
     }
   },
-
   computed: {
-    selected_linkslist(): linkslistObject[] {
-      return this.linklists
-    },
-    pageLength(): number {
-      this.updateCurrentPage(1)
-      return Math.ceil(this.selected_linkslist.length / 3)
-    },
-    SlicedLinks(): linkslistObject[] {
-      return this.selected_linkslist.slice(
-        (this.currentPage - 1) * 3,
-        (this.currentPage - 1) * 3 + 3
-      )
+    pageLength() {
+      return Math.ceil(this.totalLength / 3)
     },
   },
-  methods: {
-    updateCurrentPage(CurrentPage: number) {
-      this.CurrentPage = CurrentPage
+  watch: {
+    currentPage(newNumber: string) {
+      this.$router.push({
+        name: 'Links',
+        query: {
+          category: this.categoryValue.filter(Boolean).join(),
+          page: newNumber,
+        },
+      })
     },
+    categoryValue(newCategory) {
+      this.$router.push({
+        query: { category: newCategory.filter(Boolean).join(), page: '1' },
+      })
+      this.currentPage = 1
+    },
+  },
+  mounted() {
+    const query = this.$route.query.page
+    this.currentPage = query != null ? Number(query) : 1
+
+    const categoryq = this.$route.query.category
+    this.categoryValue = categoryq != null ? String(categoryq).split(',') : []
   },
 })
 </script>

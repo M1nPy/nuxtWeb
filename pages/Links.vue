@@ -15,7 +15,6 @@
                 return x.fields
               })
             "
-            :total-length="post.total"
           />
         </v-col>
         <v-col cols="0" lg="2"></v-col>
@@ -34,13 +33,14 @@ export default Vue.extend({
   components: {
     LinkList,
   },
-  async asyncData({ query }) {
+  async asyncData() {
     const entries = await client.getEntries({
       content_type: 'linksLists',
-      limit: 3,
+      // limit: 3,
       order: '-sys.type',
-      skip: query.page ? (Number(query.page) - 1) * 3 : 0,
-      'fields.category[all]': query.category ? query.category : 'music',
+      // SSRの場合使用
+      // skip: query.page ? (Number(query.page) - 1) * 3 : 0,
+      // 'fields.category[all]': query.category ? query.category : 'music',
       // 'fields.tags.sys.contentType.sys.id': 'tags',
       // 'fields.tags.fields.tags': '',
     })
@@ -53,7 +53,7 @@ export default Vue.extend({
       Spost: Sentries,
     }
   },
-  watchQuery: ['page', 'category'],
+  // watchQuery: ['page', 'category'],
   // mounted():{
 
   // }
