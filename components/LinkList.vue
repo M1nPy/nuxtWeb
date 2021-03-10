@@ -71,13 +71,17 @@
                     ></v-row
                   >
                   <v-row class="mt-0"
-                    ><v-col sm="6" xl="4" cols="0" class="py-0">
-                      <v-card-text v-show="screenSize() !== 'xs'">{{
-                        obj.link.substr(0, 35) +
-                        (obj.link.length > 35 ? '...' : ' ')
-                      }}</v-card-text>
+                    ><v-col sm="5" xl="4" cols="0" class="py-0">
+                      <v-card-text
+                        v-show="screenSize() !== 'xs'"
+                        class="text-no-wrap"
+                        >{{
+                          obj.link.substr(0, 35) +
+                          (obj.link.length > 35 ? '...' : ' ')
+                        }}</v-card-text
+                      >
                     </v-col>
-                    <v-col sm="6" xl="8" cols="12" class="py-0" align-self="end"
+                    <v-col sm="7" xl="8" cols="12" class="py-0" align-self="end"
                       ><v-card-text class="text-right">{{
                         obj.text
                       }}</v-card-text></v-col

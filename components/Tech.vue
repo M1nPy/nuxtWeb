@@ -222,7 +222,7 @@ export default Vue.extend({
         case 'xs':
           return 30
         case 'sm':
-          return 30
+          return 50
         case 'md':
           return 50
         case 'lg':

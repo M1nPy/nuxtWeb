@@ -4,10 +4,8 @@
       <v-row>
         <v-col
           ><v-card
-            ><v-card-title><strong>あいうえお</strong></v-card-title>
-            <v-card-text class="text-center"
-              >とりあえずなんか書いとけ</v-card-text
-            >
+            ><v-card-title><strong>だうんろーだー</strong></v-card-title>
+            <v-card-text class="text-center">↓下記をクリック！↓</v-card-text>
             <v-card-actions
               ><v-spacer></v-spacer
               ><v-btn

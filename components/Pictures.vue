@@ -21,15 +21,10 @@
                   :aspect-ratio="16 / 9"
                 >
                   <v-img
-                    :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                    :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                    :src="require('@/assets/Gallery/' + n + '.jpg')"
                     class="grey lighten-2"
                     v-bind="attrs"
-                    @click="
-                      imgUrl = `https://picsum.photos/500/300?image=${
-                        n * 5 + 10
-                      }`
-                    "
+                    @click="imgUrl = require('@/assets/Gallery/' + n + '.jpg')"
                     v-on="on"
                   >
                   </v-img>
