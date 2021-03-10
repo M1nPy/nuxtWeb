@@ -2,26 +2,28 @@
   <div class="history-wrap">
     <v-container>
       <v-row>
-        <v-card class="flex">
-          <v-card-title
-            ><h3 class="history-wrap__header--title">History</h3>
-            <v-spacer></v-spacer>
-            <v-snackbar v-model="expand">
-              <div style="text-align: center">
-                スクロールして表示してみましょう
-              </div>
-            </v-snackbar>
-            <v-spacer></v-spacer>
-            <v-btn @click="expand = !expand">
-              <span v-show="!expand">ここをクリック</span>
-              <span v-show="expand">もう一度クリック</span>
-            </v-btn>
-          </v-card-title>
+        <v-col class="pa-0">
+          <v-card class="flex">
+            <v-card-title
+              ><h3 class="history-wrap__header--title">History</h3>
+              <v-spacer></v-spacer>
+              <v-snackbar v-model="expand">
+                <div style="text-align: center">
+                  スクロールして表示してみましょう
+                </div>
+              </v-snackbar>
+              <v-spacer></v-spacer>
+              <v-btn @click="expand = !expand">
+                <span v-show="!expand">ここをクリック</span>
+                <span v-show="expand">もう一度クリック</span>
+              </v-btn>
+            </v-card-title>
+          </v-card>
           <v-img
             height="300"
             src="https://cdn.pixabay.com/photo/2021/02/07/09/11/sunset-5990540_640.jpg"
           ></v-img>
-        </v-card>
+        </v-col>
       </v-row>
       <v-row class="py-10">
         <v-spacer></v-spacer>
