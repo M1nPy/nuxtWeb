@@ -37,7 +37,7 @@ export default Vue.extend({
     const entries = await client.getEntries({
       content_type: 'linksLists',
       // limit: 3,
-      order: '-sys.type',
+      order: 'fields.name',
       // SSRの場合使用
       // skip: query.page ? (Number(query.page) - 1) * 3 : 0,
       // 'fields.category[all]': query.category ? query.category : 'music',
@@ -46,7 +46,7 @@ export default Vue.extend({
     })
     const Sentries = await client.getEntries({
       content_type: 'linksListsSelects',
-      order: '-sys.type',
+      order: 'fields.state',
     })
     return {
       post: entries,
