@@ -13,7 +13,7 @@
         <v-img
           width="100%"
           max-height="1400px"
-          :src="require('@/assets/max-bender-8kobOraz4O4-unsplash.jpg')"
+          :src="require('@/assets/status_background.jpg')"
         >
           <v-container>
             <v-row>
