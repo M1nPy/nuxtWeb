@@ -72,13 +72,13 @@
                   >
                   <v-row class="mt-0"
                     ><v-col cols="7" lg="8" class="py-0">
-                      <v-card-text>{{
+                      <v-card-text v-if="screenSize() !== 'xs'">{{
                         obj.link.substr(0, 35) +
                         (obj.link.length > 35 ? '...' : ' ')
                       }}</v-card-text>
                     </v-col>
                     <v-col cols="5" lg="4" class="py-0" align-self="end"
-                      ><v-card-text class="text-md-right text-left">{{
+                      ><v-card-text class="text-right">{{
                         obj.text
                       }}</v-card-text></v-col
                     >
@@ -166,6 +166,9 @@ export default Vue.extend({
   methods: {
     updateCurrentPage(nextPage: number) {
       this.currentPage = nextPage
+    },
+    screenSize(): string {
+      return (this as any).$vuetify.breakpoint.name
     },
   },
 })
