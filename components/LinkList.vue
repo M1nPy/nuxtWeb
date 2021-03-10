@@ -3,11 +3,24 @@
     <div class="linklist__header">
       <v-container class="linklist__header--container">
         <v-row class="linklist__header--row">
-          <v-col cols="6"
-            ><h2 class="linklist__header--title">リンク集</h2></v-col
-          >
-          <v-spacer></v-spacer>
-          <v-col cols="5" class="linklist__header--select"
+          <v-col cols="4"
+            ><h2 style="text-align: center" class="linklist__header--title">
+              リンク集
+            </h2>
+          </v-col>
+          <v-col align-self="end" cols="4">
+            <v-slider
+              v-model="showNum"
+              :thumb-color="'red'"
+              :thumb-label="true"
+              step="2"
+              :label="String(showNum)"
+              min="3"
+              max="32"
+            >
+            </v-slider>
+          </v-col>
+          <v-col cols="4" class="linklist__header--select"
             ><v-select
               v-model="categoryValue"
               :items="items"
@@ -16,8 +29,17 @@
               label="Category"
               multiple
               chips
-            ></v-select
-          ></v-col>
+            >
+              <template #selection="{ item, index }">
+                <v-chip v-if="index === 0">
+                  <span>{{ item.state }}</span>
+                </v-chip>
+                <span v-if="index === 1" class="grey--text caption">
+                  (+{{ categoryValue.length - 1 }} others)
+                </span>
+              </template>
+            </v-select></v-col
+          >
         </v-row>
       </v-container>
     </div>
@@ -39,7 +61,10 @@
                 :href="obj.link"
                 target="_blank"
                 rel="noopener noreferrer"
-                >{{ obj.name }}</a
+                ><v-card-title>{{ obj.name }}</v-card-title
+                ><v-card-text style="text-align: right">{{
+                  obj.text
+                }}</v-card-text></a
               >
             </v-card>
           </v-hover>
@@ -92,6 +117,7 @@ export default Vue.extend({
     return {
       categoryValue: [],
       currentPage: 1,
+      showNum: 3,
     }
   },
 
@@ -108,12 +134,13 @@ export default Vue.extend({
     },
     pageLength(): number {
       this.updateCurrentPage(1)
-      return Math.ceil(this.selected_linkslist.length / 3)
+      return Math.ceil(this.selected_linkslist.length / this.showNum)
     },
     SlicedLinks(): linkslistObject[] {
+      const sn: number = this.showNum
       return this.selected_linkslist.slice(
-        (this.currentPage - 1) * 3,
-        (this.currentPage - 1) * 3 + 3
+        (this.currentPage - 1) * sn,
+        (this.currentPage - 1) * sn + sn
       )
     },
   },
@@ -154,11 +181,10 @@ export default Vue.extend({
     &--transition {
       padding: 0 30px;
       list-style: none;
-      height: 500px; //button Fixed
     }
     &--vcard {
       font-size: 30px;
-      height: 100px;
+      height: 90px;
       // width: 400px;
       margin: 0 auto;
       margin-bottom: 20px;
