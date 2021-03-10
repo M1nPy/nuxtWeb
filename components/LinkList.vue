@@ -61,11 +61,30 @@
                 :href="obj.link"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><v-card-title>{{ obj.name }}</v-card-title
-                ><v-card-text style="text-align: right">{{
-                  obj.text
-                }}</v-card-text></a
               >
+                <v-container>
+                  <v-row>
+                    <v-card-title h1
+                      ><strong class="text-lg-h4 text-h5 text-blue">{{
+                        obj.name
+                      }}</strong></v-card-title
+                    ></v-row
+                  >
+                  <v-row class="mt-0"
+                    ><v-col cols="7" lg="8" class="py-0">
+                      <v-card-text>{{
+                        obj.link.substr(0, 35) +
+                        (obj.link.length > 35 ? '...' : ' ')
+                      }}</v-card-text>
+                    </v-col>
+                    <v-col cols="5" lg="4" class="py-0" align-self="end"
+                      ><v-card-text class="text-left text-lg-right">{{
+                        obj.text
+                      }}</v-card-text></v-col
+                    >
+                  </v-row></v-container
+                >
+              </a>
             </v-card>
           </v-hover>
         </li>
@@ -184,7 +203,7 @@ export default Vue.extend({
     }
     &--vcard {
       font-size: 30px;
-      height: 90px;
+      // height: 90px;
       // width: 400px;
       margin: 0 auto;
       margin-bottom: 20px;
