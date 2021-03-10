@@ -44,11 +44,21 @@
                           </p>
                           <p>
                             <v-icon>mdi-twitter</v-icon>
-                            <a href="https://twitter.com/m1npy">@M1nPy</a>
+                            <a
+                              href="https://twitter.com/m1npy"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              >@M1nPy</a
+                            >
                           </p>
                           <p>
                             <v-icon>mdi-link-variant</v-icon
-                            ><a href="m1npy.com">m1npy.com</a>
+                            ><a
+                              href="m1npy.com"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              >m1npy.com</a
+                            >
                           </p>
                         </v-card-text>
                         <v-divider></v-divider>
@@ -78,7 +88,10 @@
                           </p>
                           <p>
                             <v-icon>mdi-link-variant</v-icon
-                            ><a href="https://osu.ppy.sh/users/10363375"
+                            ><a
+                              href="https://osu.ppy.sh/users/10363375"
+                              target="_blank"
+                              rel="noopener noreferrer"
                               >https://osu.ppy.sh/users/10363375</a
                             >
                           </p>
@@ -112,6 +125,8 @@
                           <p>
                             <v-icon>mdi-link-variant</v-icon
                             ><a
+                              target="_blank"
+                              rel="noopener noreferrer"
                               href="https://erogamescape.dyndns.org/~ap2/ero/toukei_kaiseki/user_infomation.php?user=M1nPy"
                               >https://erogamescape.dyndns.org</a
                             >
@@ -139,7 +154,10 @@
                           </p>
                           <p>
                             <v-icon>mdi-link-variant</v-icon
-                            ><a href="https://yamap.com/users/1687023"
+                            ><a
+                              href="https://yamap.com/users/1687023"
+                              target="_blank"
+                              rel="noopener noreferrer"
                               >https://yamap.com/users/1687023</a
                             >
                           </p>
@@ -163,6 +181,8 @@
                             <v-icon>mdi-link-variant</v-icon
                             ><a
                               href="https://www.youtube.com/channel/UCMAmj-08fJFbyhPRcivqGhg"
+                              target="_blank"
+                              rel="noopener noreferrer"
                               >modernparachute</a
                             >
                           </p>
