@@ -11,7 +11,7 @@
           <v-col align-self="end" cols="4">
             <v-slider
               v-model="showNum"
-              :thumb-color="'red'"
+              :thumb-color="'orange'"
               :thumb-label="true"
               step="2"
               :label="String(showNum)"
@@ -71,13 +71,13 @@
                     ></v-row
                   >
                   <v-row class="mt-0"
-                    ><v-col cols="7" lg="8" class="py-0">
-                      <v-card-text v-if="screenSize() !== 'xs'">{{
+                    ><v-col sm="6" xl="4" cols="0" class="py-0">
+                      <v-card-text v-show="screenSize() !== 'xs'">{{
                         obj.link.substr(0, 35) +
                         (obj.link.length > 35 ? '...' : ' ')
                       }}</v-card-text>
                     </v-col>
-                    <v-col cols="5" lg="4" class="py-0" align-self="end"
+                    <v-col sm="6" xl="8" cols="12" class="py-0" align-self="end"
                       ><v-card-text class="text-right">{{
                         obj.text
                       }}</v-card-text></v-col
