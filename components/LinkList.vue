@@ -78,7 +78,7 @@
                       }}</v-card-text>
                     </v-col>
                     <v-col cols="5" lg="4" class="py-0" align-self="end"
-                      ><v-card-text class="text-left text-lg-right">{{
+                      ><v-card-text class="text-right text-sm-right">{{
                         obj.text
                       }}</v-card-text></v-col
                     >
