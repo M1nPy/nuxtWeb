@@ -40,7 +40,7 @@
                           </p>
                           <p>
                             <v-icon>mdi-email</v-icon>
-                            <span>Gmail:kagawakosen@...</span>
+                            <span>Gmail:m1npy12345@...</span>
                           </p>
                           <p>
                             <v-icon>mdi-twitter</v-icon>
