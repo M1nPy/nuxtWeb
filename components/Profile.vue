@@ -52,6 +52,15 @@
                             >
                           </p>
                           <p>
+                            <v-icon>mdi-github</v-icon>
+                            <a
+                              href="https://github.com/M1nPy"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              >M1nPy</a
+                            >
+                          </p>
+                          <p>
                             <v-icon>mdi-link-variant</v-icon
                             ><a
                               href="m1npy.com"
