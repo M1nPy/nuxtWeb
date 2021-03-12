@@ -4,8 +4,11 @@
       <v-container class="linklist__header--container">
         <v-row class="linklist__header--row">
           <v-col cols="4"
-            ><h2 style="text-align: center" class="linklist__header--title">
-              リンク集
+            ><h2
+              style="text-align: center"
+              class="linklist__header--title text-caption text-sm-h5"
+            >
+              おすすめリンク集
             </h2>
           </v-col>
           <v-col align-self="end" cols="4">
@@ -74,15 +77,12 @@
                     ><v-col sm="5" xl="4" cols="0" class="py-0">
                       <v-card-text
                         v-show="screenSize() !== 'xs'"
-                        class="text-no-wrap"
-                        >{{
-                          obj.link.substr(0, 35) +
-                          (obj.link.length > 35 ? '...' : ' ')
-                        }}</v-card-text
+                        class="text-truncate"
+                        >{{ obj.link }}</v-card-text
                       >
                     </v-col>
                     <v-col sm="7" xl="8" cols="12" class="py-0" align-self="end"
-                      ><v-card-text class="text-right">{{
+                      ><v-card-text class="text-right text-truncate">{{
                         obj.text
                       }}</v-card-text></v-col
                     >
