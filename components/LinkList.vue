@@ -67,10 +67,12 @@
               >
                 <v-container>
                   <v-row>
-                    <v-card-title h1
-                      ><strong class="text-lg-h4 text-h5 text-blue">{{
-                        obj.name
-                      }}</strong></v-card-title
+                    <v-col class="pb-0 pb-sm-3">
+                      <v-card-title h1
+                        ><strong class="text-lg-h4 text-h5 text-truncate">{{
+                          obj.name
+                        }}</strong></v-card-title
+                      ></v-col
                     ></v-row
                   >
                   <v-row class="mt-0"
