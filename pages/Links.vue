@@ -55,17 +55,17 @@ export default Vue.extend({
   },
   data() {
     return {
-      title: 'Character',
+      title: 'Links',
     }
   },
   head() {
     return {
-      title: 'Character',
+      title: 'Links',
       meta: [
         {
-          hid: 'Character',
-          name: 'Character',
-          content: 'Character',
+          hid: 'Links',
+          name: 'Links',
+          content: 'Links',
         },
       ],
     }
