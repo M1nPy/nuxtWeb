@@ -8,5 +8,22 @@ export default Vue.extend({
   components: {
     Pictures,
   },
+  data() {
+    return {
+      title: 'Gallery',
+    }
+  },
+  head() {
+    return {
+      title: 'Gallery',
+      meta: [
+        {
+          hid: 'Gallery',
+          name: 'Gallery',
+          content: 'Gallery',
+        },
+      ],
+    }
+  },
 })
 </script>

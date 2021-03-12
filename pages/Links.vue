@@ -53,6 +53,23 @@ export default Vue.extend({
       Spost: Sentries,
     }
   },
+  data() {
+    return {
+      title: 'Character',
+    }
+  },
+  head() {
+    return {
+      title: 'Character',
+      meta: [
+        {
+          hid: 'Character',
+          name: 'Character',
+          content: 'Character',
+        },
+      ],
+    }
+  },
   // watchQuery: ['page', 'category'],
   // mounted():{
 

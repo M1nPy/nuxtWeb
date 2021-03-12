@@ -8,5 +8,22 @@ export default Vue.extend({
   components: {
     Tech,
   },
+  data() {
+    return {
+      title: 'Character',
+    }
+  },
+  head() {
+    return {
+      title: 'Character',
+      meta: [
+        {
+          hid: 'Character',
+          name: 'Character',
+          content: 'Character',
+        },
+      ],
+    }
+  },
 })
 </script>

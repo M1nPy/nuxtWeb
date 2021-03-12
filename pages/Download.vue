@@ -8,5 +8,22 @@ export default Vue.extend({
   components: {
     Dlc,
   },
+  data() {
+    return {
+      title: 'Download',
+    }
+  },
+  head() {
+    return {
+      title: 'Download',
+      meta: [
+        {
+          hid: 'Download',
+          name: 'Download',
+          content: 'Download',
+        },
+      ],
+    }
+  },
 })
 </script>
