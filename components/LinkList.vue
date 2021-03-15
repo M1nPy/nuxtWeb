@@ -3,15 +3,16 @@
     <div class="linklist__header">
       <v-container class="linklist__header--container">
         <v-row class="linklist__header--row">
-          <v-col cols="4"
+          <v-col cols="8" sm="4"
             ><h2
               style="text-align: center"
-              class="linklist__header--title text-caption text-sm-h5"
+              class="linklist__header--title text-sm-h5"
             >
               おすすめリンク集
             </h2>
           </v-col>
-          <v-col align-self="end" cols="4">
+          <v-spacer v-show="showBarbp"></v-spacer>
+          <v-col v-show="!showBarbp" align-self="end" cols="4">
             <v-slider
               v-model="showNum"
               :thumb-color="'orange'"
@@ -44,6 +45,19 @@
             </v-select></v-col
           >
         </v-row>
+        <v-row>
+          <v-col v-show="showBarbp" align-self="start" class="py-0">
+            <v-slider
+              v-model="showNum"
+              :thumb-color="'orange'"
+              :thumb-label="true"
+              step="2"
+              :label="String(showNum)"
+              min="3"
+              max="32"
+            >
+            </v-slider> </v-col
+        ></v-row>
       </v-container>
     </div>
     <div class="linklist__list">
@@ -167,6 +181,9 @@ export default Vue.extend({
         (this.currentPage - 1) * sn,
         (this.currentPage - 1) * sn + sn
       )
+    },
+    showBarbp(): boolean {
+      return (this as any).$vuetify.breakpoint.name === 'xs'
     },
   },
   methods: {
