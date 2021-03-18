@@ -68,14 +68,14 @@
       >
         <li
           v-for="obj in SlicedLinks"
-          :key="obj.name"
+          :key="obj.fields.name"
           class="linklist__list--item"
         >
           <v-hover v-slot="{ hover }">
             <v-card class="linklist__list--vcard" :elevation="hover ? 10 : 2">
               <a
                 class="linklist__list--vcard--link"
-                :href="obj.link"
+                :href="obj.fields.link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -84,7 +84,7 @@
                     <v-col class="pb-0 pb-sm-3">
                       <v-card-title h1
                         ><strong class="text-lg-h4 text-h5 text-truncate">{{
-                          obj.name
+                          obj.fields.name
                         }}</strong></v-card-title
                       ></v-col
                     ></v-row
@@ -94,12 +94,12 @@
                       <v-card-text
                         v-show="screenSize() !== 'xs'"
                         class="text-truncate"
-                        >{{ obj.link }}</v-card-text
+                        >{{ obj.fields.link }}</v-card-text
                       >
                     </v-col>
                     <v-col sm="7" xl="8" cols="12" class="py-0" align-self="end"
                       ><v-card-text class="text-right text-truncate">{{
-                        obj.text
+                        obj.fields.text
                       }}</v-card-text></v-col
                     >
                   </v-row></v-container
@@ -123,11 +123,15 @@
 <script lang="ts">
 import Vue from 'vue'
 
-interface linkslistObject {
+interface propsListItems {
   name: string
   link: string
   text: string
   category: string[]
+}
+interface linkListsObj {
+  fields: propsListItems
+  metadata: object
 }
 interface selectList {
   state: string
@@ -137,10 +141,18 @@ export default Vue.extend({
   name: 'LinkList',
   props: {
     linklists: {
-      type: Array as Vue.PropType<linkslistObject[]>,
+      type: Array as Vue.PropType<linkListsObj[]>,
       default() {
         return [
-          { text: 'none', link: 'none', name: 'none', category: ['music'] },
+          {
+            fields: {
+              text: 'none',
+              link: 'none',
+              name: 'none',
+              category: ['music'],
+            },
+            metadata: {},
+          },
         ]
       },
     },
@@ -166,7 +178,7 @@ export default Vue.extend({
       return this.linklists.filter(function (linklist) {
         return (
           CategoryValue.map((item: string) =>
-            linklist.category.includes(item)
+            linklist.fields.category.includes(item)
           ).filter((x: Boolean) => x === true).length >= CategoryValue.length
         )
       })
@@ -175,7 +187,7 @@ export default Vue.extend({
       this.updateCurrentPage(1)
       return Math.ceil(this.selected_linkslist.length / this.showNum)
     },
-    SlicedLinks(): linkslistObject[] {
+    SlicedLinks(): linkListsObj[] {
       const sn: number = this.showNum
       return this.selected_linkslist.slice(
         (this.currentPage - 1) * sn,
