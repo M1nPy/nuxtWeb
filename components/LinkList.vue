@@ -131,7 +131,7 @@ interface propsListItems {
 }
 interface linkListsObj {
   fields: propsListItems
-  metadata: object
+  metadata: {}
 }
 interface selectList {
   state: string
@@ -175,13 +175,17 @@ export default Vue.extend({
   computed: {
     selected_linkslist() {
       const CategoryValue = (this as any).categoryValue
-      return this.linklists.filter(function (linklist) {
-        return (
-          CategoryValue.map((item: string) =>
-            linklist.fields.category.includes(item)
-          ).filter((x: Boolean) => x === true).length >= CategoryValue.length
-        )
-      })
+      // console.log(this.linklists[0].metadata.tags.map((x) => x.sys.id))
+      return this.linklists.filter(
+        (linklist) =>
+          CategoryValue.map((item: string) => {
+            return linklist.metadata.tags
+              .map((x: { sys: { id: string } }) => {
+                return x.sys.id
+              })
+              .includes(item)
+          }).filter((x: Boolean) => x === true).length >= CategoryValue.length
+      )
     },
     pageLength(): number {
       this.updateCurrentPage(1)
