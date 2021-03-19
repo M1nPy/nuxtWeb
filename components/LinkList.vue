@@ -115,7 +115,7 @@
         v-model="currentPage"
         circle
         :length="pageLength > 0 ? pageLength : 1"
-        :total-visible="5"
+        :total-visible="7"
       ></v-pagination>
     </div>
   </div>
