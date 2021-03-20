@@ -74,19 +74,33 @@ export default Vue.extend({
   name: 'History',
   data() {
     return {
+      // history2: [
+      //   { title: '5年前期', text: 'なんかやった。' },
+      //   { title: '4年前期', text: 'なんかやった。' },
+      //   { title: '3年前期', text: 'なんかやった。' },
+      //   { title: '2年前期', text: 'なんかやった。' },
+      //   { title: '1年前期', text: 'なんかやった。' },
+      // ],
+      // history1: [
+      //   { title: '5年後期', text: 'なんかやった。' },
+      //   { title: '4年後期', text: 'なんかやった。' },
+      //   { title: '3年後期', text: 'なんかやった。' },
+      //   { title: '2年後期', text: 'なんかやった。' },
+      //   { title: '1年後期', text: 'なんかやった。' },
+      // ],
       history2: [
-        { title: '5年前期', text: 'なんかやった。' },
-        { title: '4年前期', text: 'なんかやった。' },
-        { title: '3年前期', text: 'なんかやった。' },
-        { title: '2年前期', text: 'なんかやった。' },
-        { title: '1年前期', text: 'なんかやった。' },
+        { title: '未実装', text: '未実装' },
+        { title: '未実装', text: '未実装' },
+        { title: '未実装', text: '未実装' },
+        { title: '未実装', text: '未実装' },
+        { title: '未実装', text: '未実装' },
       ],
       history1: [
-        { title: '5年後期', text: 'なんかやった。' },
-        { title: '4年後期', text: 'なんかやった。' },
-        { title: '3年後期', text: 'なんかやった。' },
-        { title: '2年後期', text: 'なんかやった。' },
-        { title: '1年後期', text: 'なんかやった。' },
+        { title: '未実装', text: '未実装' },
+        { title: '未実装', text: '未実装' },
+        { title: '未実装', text: '未実装' },
+        { title: '未実装', text: '未実装' },
+        { title: '未実装', text: '未実装' },
       ],
       expand: false,
     }
