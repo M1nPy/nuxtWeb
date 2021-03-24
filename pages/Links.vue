@@ -5,11 +5,7 @@
         <v-col cols="0" lg="2"></v-col>
         <v-col cols="12" lg="8">
           <LinkList
-            :linklists="
-              post.items.map(function (x) {
-                return x.fields
-              })
-            "
+            :linklists="post.items"
             :items="
               Spost.items.map(function (x) {
                 return x.fields
