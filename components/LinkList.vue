@@ -179,6 +179,7 @@ export default Vue.extend({
       return this.linklists.filter(
         (linklist) =>
           CategoryValue.map((item: string) => {
+            // @ts-ignore
             return linklist.metadata.tags
               .map((x: { sys: { id: string } }) => {
                 return x.sys.id
