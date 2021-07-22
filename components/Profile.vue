@@ -38,6 +38,7 @@
                   </p>
                 </v-col>
               </v-row>
+
               <v-row>
                 <v-spacer></v-spacer>
                 <v-col class="pt-6" cols="6">
@@ -48,19 +49,8 @@
                 <v-spacer></v-spacer>
               </v-row>
               <v-row v-for="items in profile" :key="items.title" class="my-8">
-                <v-col
-                  flex
-                  cols="5"
-                  class="text-h5 text-sm-h4 mx-auto"
-                  style="display: table; width: 100%"
-                >
-                  <div
-                    align="center"
-                    class="my-auto"
-                    style="display: table-cell; vertical-align: middle"
-                  >
-                    {{ items.title }}
-                  </div>
+                <v-col flex cols="5" class="text-h5 text-sm-h4 contents-title">
+                  {{ items.title }}
                 </v-col>
                 <v-col cols="7 align-self-center">
                   <v-row>
@@ -166,8 +156,11 @@ export default Vue.extend({
 }
 .contents {
   &-title {
-    white-space: pre-line;
-    word-wrap: break-word;
+    // white-space: pre-line;
+    // word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
