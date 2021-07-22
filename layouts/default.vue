@@ -81,9 +81,9 @@ export default {
           link: '/Story',
         },
         {
-          name: 'Character',
+          name: 'Tech',
           icon: 'mdi-account-multiple',
-          link: '/Character',
+          link: '/Tech',
         },
         {
           name: 'Gallery',
@@ -94,11 +94,6 @@ export default {
           name: 'Download',
           icon: 'mdi-arrow-collapse-down',
           link: '/Download',
-        },
-        {
-          name: 'Spec',
-          icon: 'mdi-package-variant-closed',
-          link: '/Spec',
         },
         {
           name: 'Links',

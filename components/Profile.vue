@@ -2,209 +2,97 @@
   <div class="profile-wrap">
     <v-container>
       <v-row>
-        <v-card class="flex">
-          <v-card-title
-            ><h3 class="history-wrap__header--title">Status</h3>
-            <v-spacer></v-spacer>
-          </v-card-title>
-        </v-card>
-      </v-row>
-      <v-row>
-        <v-img
-          width="100%"
-          max-height="1400px"
-          :src="require('@/assets/status_background.jpg')"
-        >
-          <v-container>
-            <v-row>
-              <v-spacer></v-spacer>
-              <v-col cols="11" lg="8">
-                <v-card class="my-10" width="100%">
-                  <v-container>
-                    <v-row>
-                      <v-spacer></v-spacer>
-                      <v-col class="pt-6" cols="6">
-                        <v-card-title class="text-h5 text-sm-h2"
-                          ><div class="mx-auto">M1nPy</div></v-card-title
-                        >
-                      </v-col>
-                      <v-spacer></v-spacer>
-                    </v-row>
-                    <v-row>
-                      <v-spacer></v-spacer>
-                      <v-col align-self="center" cols="8">
-                        <v-card-text>
-                          <p>
-                            <v-icon>mdi-account-box</v-icon>
-                            <span>M1nPy</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-email</v-icon>
-                            <span>Gmail:m1npy12345@...</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-twitter</v-icon>
-                            <a
-                              href="https://twitter.com/m1npy"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              >@M1nPy</a
-                            >
-                          </p>
-                          <p>
-                            <v-icon>mdi-github</v-icon>
-                            <a
-                              href="https://github.com/M1nPy"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              >M1nPy</a
-                            >
-                          </p>
-                          <p>
-                            <v-icon>mdi-link-variant</v-icon
-                            ><a
-                              href="m1npy.com"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              >m1npy.com</a
-                            >
-                          </p>
-                        </v-card-text>
-                        <v-divider></v-divider>
-                      </v-col>
-                      <v-spacer></v-spacer>
-                    </v-row>
-                    <v-row>
-                      <v-col cols="5">
-                        <v-card-title class="text-h5 text-sm-h2"
-                          ><div class="mx-auto">Osu!</div></v-card-title
-                        >
-                      </v-col>
-                      <v-col cols="7">
-                        <v-card-text>
-                          <p>
-                            <v-icon>mdi-account-box</v-icon>
-                            <span>M1nPy</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-crown</v-icon>
-                            <span>#117,913 (noAPI)</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-database</v-icon>
-                            <!-- noAPI -->
-                            <span>3413pp</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-link-variant</v-icon
-                            ><a
-                              href="https://osu.ppy.sh/users/10363375"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              >https://osu.ppy.sh/users/10363375</a
-                            >
-                          </p>
-                        </v-card-text>
-                        <v-divider></v-divider>
-                      </v-col>
-                    </v-row>
-                    <v-row>
-                      <v-col cols="5">
-                        <v-card-title class="text-h5 text-sm-h2"
-                          ><div class="mx-auto" style="text-align: center">
-                            Erogame<br />Scape
-                          </div></v-card-title
-                        >
-                      </v-col>
-                      <v-col cols="7">
-                        <v-card-text>
-                          <p>
-                            <v-icon>mdi-account-box</v-icon>
-                            <span>M1nPy</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-shopping</v-icon>
-                            <span>56</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-check</v-icon>
-                            <!-- noAPI -->
-                            <span>19</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-link-variant</v-icon
-                            ><a
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href="https://erogamescape.dyndns.org/~ap2/ero/toukei_kaiseki/user_infomation.php?user=M1nPy"
-                              >https://erogamescape.dyndns.org</a
-                            >
-                          </p>
-                        </v-card-text>
-                        <v-divider></v-divider>
-                      </v-col>
-                    </v-row>
-                    <v-row>
-                      <v-col cols="5">
-                        <v-card-title class="text-h5 text-sm-h2"
-                          ><div class="mx-auto">YAMAP</div></v-card-title
-                        >
-                      </v-col>
-                      <v-col cols="7">
-                        <v-card-text>
-                          <p>
-                            <v-icon>mdi-account-box</v-icon>
-                            M1nPy
-                          </p>
-                          <p>
-                            <v-icon>mdi-medal</v-icon>
-                            <!-- noAPI -->
-                            Bronze
-                          </p>
-                          <p>
-                            <v-icon>mdi-link-variant</v-icon
-                            ><a
-                              href="https://yamap.com/users/1687023"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              >https://yamap.com/users/1687023</a
-                            >
-                          </p>
-                        </v-card-text>
-                        <v-divider></v-divider>
-                      </v-col>
-                    </v-row>
-                    <v-row>
-                      <v-col cols="5">
-                        <v-card-title class="text-h5 text-sm-h2"
-                          ><div class="mx-auto">Youtube</div></v-card-title
-                        >
-                      </v-col>
-                      <v-col cols="7">
-                        <v-card-text>
-                          <p>
-                            <v-icon>mdi-account-box</v-icon>
-                            <span>modern parachute</span>
-                          </p>
-                          <p>
-                            <v-icon>mdi-link-variant</v-icon
-                            ><a
-                              href="https://www.youtube.com/channel/UCMAmj-08fJFbyhPRcivqGhg"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              >modernparachute</a
-                            >
-                          </p>
-                        </v-card-text>
-                      </v-col>
-                    </v-row>
-                  </v-container>
-                </v-card>
-              </v-col>
-              <v-spacer></v-spacer>
-            </v-row>
-          </v-container>
-        </v-img>
+        <v-spacer></v-spacer>
+        <v-col cols="11" lg="8">
+          <v-card class="my-10" width="100%">
+            <v-container>
+              <v-row>
+                <v-col class="pt-6" align="center">
+                  <v-card-title
+                    class="justify-center mx-auto my-10 text-h3 text-sm-h1"
+                  >
+                    M1nPy
+                  </v-card-title>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col class="mb-8" align="center">
+                  <v-avatar size="150" class="justify-center">
+                    <v-img
+                      :src="require('@/assets/logo.png')"
+                      class="my-3"
+                      contain
+                    />
+                  </v-avatar>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col class="mb-8 text-center">
+                  <p class="subtitle-1">
+                    趣味はプログラミング、ピアノ、音楽理論、登山、キャンプ、自作PC、気象学、アニメ、ADVです。<br />
+                    JazzやJFN系列のラジオを好んで聞きます。<br />
+                    専攻は電気情報工学です。<br />
+                    最近は主にPythonとNuxtを使っています。
+                  </p>
+                </v-col>
+              </v-row>
+
+              <v-row>
+                <v-col class="pt-6">
+                  <v-card-title class="text-h4 text-sm-h3"
+                    ><div class="mx-auto my-8 justify-center">
+                      Contents
+                    </div></v-card-title
+                  >
+                </v-col>
+              </v-row>
+              <v-row v-for="items in profile" :key="items.title" class="my-16">
+                <v-col flex cols="6" class="text-h5 text-sm-h4 contents-title">
+                  {{ items.title }}
+                </v-col>
+                <v-col cols="6 align-self-center">
+                  <v-row>
+                    <v-col>
+                      <v-icon>mdi-account-box</v-icon>
+                      <span>{{ items.name }}</span>
+                    </v-col></v-row
+                  >
+                  <v-row
+                    ><v-col class="overline">
+                      <v-icon>mdi-link-variant</v-icon
+                      ><a
+                        :href="items.url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >{{ items.url.slice(0, 25) }}...</a
+                      >
+                    </v-col></v-row
+                  >
+                </v-col>
+              </v-row>
+              <!-- contact -->
+              <v-row>
+                <v-col class="pt-6" align="center">
+                  <v-card-title class="text-h4 text-sm-h3 justify-center"
+                    ><div class="my-8">Contact</div></v-card-title
+                  >
+                </v-col>
+              </v-row>
+              <v-row class="mb-12 mt-6">
+                <v-col
+                  v-for="items in contact"
+                  :key="items.means"
+                  class="text-center"
+                >
+                  <a :href="items.url" style="text-decoration: none">
+                    <v-icon size="64"> {{ items.icon }} </v-icon></a
+                  >
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card>
+        </v-col>
+        <v-spacer></v-spacer>
       </v-row>
     </v-container>
   </div>
@@ -215,7 +103,61 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'Profile',
   data() {
-    return {}
+    return {
+      contact: [
+        { icon: 'mdi-discord', means: 'Discord', url: 'M1nPy#8777' },
+        {
+          icon: 'mdi-twitter',
+          means: 'Twitter',
+          url: 'https://twitter.com/m1npy',
+        },
+        {
+          icon: 'mdi-github',
+          means: 'Github',
+          url: 'https://github.com/M1nPy',
+        },
+        { icon: 'mdi-link-variant', means: 'Website', url: 'm1npy.com' },
+      ],
+      profile: [
+        {
+          title: 'Osu!',
+          name: 'M1nPy',
+          url: 'https://osu.ppy.sh/users/10363375',
+        },
+        {
+          title: 'ErogameSpace',
+          name: 'M1nPy',
+          url:
+            'https://erogamescape.dyndns.org/~ap2/ero/toukei_kaiseki/user_infomation.php?user=M1nPy',
+        },
+        {
+          title: 'YAMAP',
+          name: 'M1nPy',
+          url: 'https://yamap.com/users/1687023',
+        },
+        {
+          title: 'Youtube',
+          name: 'modernparachute',
+          url: 'https://www.youtube.com/channel/UCMAmj-08fJFbyhPRcivqGhg',
+        },
+      ],
+    }
   },
 })
 </script>
+<style lang="scss" scoped>
+.profile {
+  &-wrap {
+    background: url(~@/assets/status_background.jpg);
+  }
+}
+.contents {
+  &-title {
+    // white-space: pre-line;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+</style>

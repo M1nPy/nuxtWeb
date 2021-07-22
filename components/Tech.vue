@@ -4,7 +4,7 @@
       <v-row>
         <v-card class="flex">
           <v-card-title
-            ><strong>Such as frameworks used on this site</strong>
+            ><strong>There frameworks were used on this site</strong>
             <v-spacer></v-spacer>
           </v-card-title>
         </v-card>

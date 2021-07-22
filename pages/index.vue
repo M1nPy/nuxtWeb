@@ -1,15 +1,29 @@
 <template>
-  <div class="index">
-    <HelloWorld />
-  </div>
+  <div class="index-wrap"><Profile /></div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import HelloWorld from '@/components/HelloWorld.vue'
+import Profile from '@/components/Profile.vue'
 export default Vue.extend({
   components: {
-    HelloWorld,
+    Profile,
+  },
+  data() {
+    return {
+      title: 'index',
+    }
+  },
+  head() {
+    return {
+      title: 'index',
+      meta: [
+        {
+          hid: 'index',
+          name: 'index',
+          content: 'index',
+        },
+      ],
+    }
   },
 })
 </script>
-<style lang="scss" scoped></style>
