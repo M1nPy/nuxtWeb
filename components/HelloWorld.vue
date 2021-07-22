@@ -11,7 +11,7 @@
       </v-col>
 
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">Welcome to M1nPy</h1>
+        <h1 class="display-2 font-weight-bold mb-3">I'm,M1nPy.</h1>
 
         <p class="subheading font-weight-regular">
           For help and collaboration with M1nPy,

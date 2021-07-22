@@ -48,7 +48,7 @@
                 </v-col>
                 <v-spacer></v-spacer>
               </v-row>
-              <v-row v-for="items in profile" :key="items.title" class="my-8">
+              <v-row v-for="items in profile" :key="items.title" class="my-16">
                 <v-col flex cols="5" class="text-h5 text-sm-h4 contents-title">
                   {{ items.title }}
                 </v-col>
@@ -88,8 +88,10 @@
                   :key="items.means"
                   class="text-center"
                 >
-                  <v-icon>{{ items.icon }}</v-icon>
-                  <a :href="items.url">{{ items.means }}</a>
+                  <p>
+                    <v-icon>{{ items.icon }}</v-icon>
+                    <a :href="items.url">{{ items.means }}</a>
+                  </p>
                 </v-col>
               </v-row>
             </v-container>

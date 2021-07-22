@@ -1,26 +1,26 @@
 <template>
-  <div class="spec-wrap"><Profile /></div>
+  <div class="Tech-wrap"><Tech /></div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import Profile from '@/components/Profile.vue'
+import Tech from '@/components/Tech.vue'
 export default Vue.extend({
   components: {
-    Profile,
+    Tech,
   },
   data() {
     return {
-      title: 'Spec',
+      title: 'Tech',
     }
   },
   head() {
     return {
-      title: 'Spec',
+      title: 'Tech',
       meta: [
         {
-          hid: 'Spec',
-          name: 'Spec',
-          content: 'Spec',
+          hid: 'Tech',
+          name: 'Tech',
+          content: 'Tech',
         },
       ],
     }
