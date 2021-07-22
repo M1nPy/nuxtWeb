@@ -1,5 +1,5 @@
 <template>
-  <div class="spec-wrap"><Profile /></div>
+  <div class="index-wrap"><Profile /></div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
@@ -10,17 +10,17 @@ export default Vue.extend({
   },
   data() {
     return {
-      title: 'Spec',
+      title: 'index',
     }
   },
   head() {
     return {
-      title: 'Spec',
+      title: 'index',
       meta: [
         {
-          hid: 'Spec',
-          name: 'Spec',
-          content: 'Spec',
+          hid: 'index',
+          name: 'index',
+          content: 'index',
         },
       ],
     }
